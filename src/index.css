@@ -11,3 +11,286 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --dark-one: #333;
+  --dark-two: yellow;
+  --main-color: green;
+  --light-one: #aba8e1;
+  --light-two: #f9fafb;
+  --light-three: hwb(232 35% 51% / 0.116);
+}
+
+/* displaced elements*/
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+.column-1 {
+  margin-right: 0.5rem;
+  max-width: 480px;
+  min-height: 820px;
+  align-items: center;
+  justify-content: center;
+}
+.transaction-filter{
+  display: grid;
+  padding: 10px;
+}
+.column-2 {
+  margin-left: 0.5rem;
+  min-width: 900px;
+  min-height: 820px;
+}
+.z-index {
+  position: relative;
+  z-index: 2;
+}
+
+/* tables */
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table th {
+background-color: var(--main-color);
+color:var(--light-two);
+text-align: left;
+}
+.styled-table th,
+.styled-table td {
+  padding: 10px 30px;
+}
+.styled-table tr {
+border-bottom: 1px var(--light-two);;
+}
+
+.styled-table tr:nth-of-type(even) {
+background-color:var(--light-one);;
+}
+
+.styled-table tr:last-of-type {
+border-bottom: 1px solid  #888;
+}
+.styled-table tr.active-row {
+font-weight: bold;
+color:  var(--main-color);
+}
+
+
+/* container section title */
+.container {
+  position: relative;
+  z-index: 5;
+  max-width: 120rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+.text {
+  font-size: 0.85rem;
+  color: var(--dark-two);
+  line-height: 1.6;
+}
+.textStrong{
+  font-size: 1.85rem;
+  color: var(--dark-two);
+  line-height: 1.6;
+}
+.section {
+  padding: 3rem 0;
+  overflow: hidden;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+  line-height: 1;
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+.title:before {
+  content: attr(data-title);
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--main-color);
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.title:after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 5px;
+  border-radius: 3px;
+  background-color: var(--main-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section-header .text {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* tcards */
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;   
+  width: 100%;
+}
+.card {
+  position: relative;
+  width: 100%;
+  min-width: 360px;
+  min-height: 150px;
+  background-color: var(--light-three);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:before {
+  content: attr(data-card);
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 0.4;
+  color: var(--main-color);
+  opacity: 0.025;
+}
+.card:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--main-color);
+  transition: 0.3s;
+}
+
+.card .title-sm {
+  line-height: 1.4;
+}
+.header-title {
+  font-size: 3.8rem;
+  line-height: 0.8;
+  color: var(--dark-one);
+}
+
+.header-content .text {
+  margin: 2.15rem 0;
+}
+
+.card .text {
+  font-size: 0.85rem;
+  margin: 0.9 rem 0;
+}
+
+
+
+
+/*buttons*/
+
+button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  max-width: 300px;
+  background: var(--main-color);
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: var(--light-two);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 10px;
+}
+
+button:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+/* AddTransaction form container */
+form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+  background-color:  var(--light-one);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Form labels */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Form input fields */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Submit button */
+button {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Style the submit button on hover */
+button:hover {
+  background-color: #0056b3;
+}
+
+
+/* SearchBar Component */
+.search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
